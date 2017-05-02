@@ -16,7 +16,7 @@ class Doctor
     doctors
   end
 
-  define_method(:==) do |anoter_doctor|
+  define_method(:==) do |another_doctor|
     self.name().==(another_doctor.name())
 
   end
