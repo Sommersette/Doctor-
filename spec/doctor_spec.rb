@@ -2,6 +2,7 @@ require "doctor"
 require "rspec"
 require "pry"
 require "pg"
+require ('spec_helper')
 
 # DB = PG.connect({:dbname => 'clinic_database'})
 describe(Doctor) do
