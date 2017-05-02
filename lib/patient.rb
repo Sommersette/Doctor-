@@ -1,11 +1,11 @@
 class Patient
-  attr_accessor(:name, :birthdate, :id, :doctor_id)
+  attr_accessor(:name, :birthdate, :id, :doc_id)
 
   define_method(:initialize) do |attributes|
     @name = attributes.fetch(:name)
     @birthdate = attributes.fetch(:birthdate)
     @id = attributes[:id]
-    @doctor_id = attributes[:doctor_id]
+    @doc_id = attributes[:doc_id]
   end
 
   define_singleton_method(:all) do
@@ -15,8 +15,8 @@ class Patient
         name = patient.fetch("name")
         birthdate = patient.fetch("birthdate")
         id = patient.fetch("id").to_i()
-        doctor_id = patient.fetch("doctor_id").to_i()
-        patients.push(Patient.new({:name => name, :birthdate => birthdate, :id => id, :doctor_id => doctor_id}))
+        doc_id = patient.fetch("doc_id").to_i()
+        patients.push(Patient.new({:name => name, :birthdate => birthdate, :id => id, :doc_id => doc_id}))
         end
       patients
     end
