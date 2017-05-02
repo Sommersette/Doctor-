@@ -35,6 +35,13 @@ describe(Doctor) do
     end
   end
 
+  describe("#specialty") do
+    it("lets you read the doctor's specialty") do
+      doctor = Doctor.new({:name => "learn SQL", :id => nil, :specialty => "hands"})
+      expect(doctor.specialty()).to(eq("hands"))
+    end
+  end
+
   describe("#==") do
     it("compares two doctors") do
       doctor1 = Doctor.new({:name => "learn SQL", :id => nil, :specialty => "hands"})
