@@ -21,6 +21,19 @@ describe(Doctor) do
     end
   end
 
+  describe("#name") do
+    it("lets you see the name") do
+      doctor = Doctor.new({:name => "learn SQL", :id => nil, :specialty => "hands"})
+      expect(doctor.name()).to(eq("learn SQL"))
+    end
+  end
+
+  describe("#id") do
+    it("lets you read the doctor ID") do
+      doctor = Doctor.new({:name => "learn SQL", :id => nil, :specialty => "hands"})
+      expect(doctor.id()).to(eq(nil))
+    end
+  end
 
   describe("#==") do
     it("compares two doctors") do
@@ -29,7 +42,5 @@ describe(Doctor) do
       expect(doctor1).to(eq(doctor2))
     end
   end
-
-
 
 end
