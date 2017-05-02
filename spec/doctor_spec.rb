@@ -50,4 +50,25 @@ describe(Doctor) do
     end
   end
 
+  describe("#find") do
+    it("allow doctors to search for all patients in their care") do
+      patient = Patient.new({:name => "Dorf",:doc_id => 9, :birthdate => '2017-05-01'})
+      expect(patient.find).to(eq(9))
+    end
+  end
+
+  define_method(:patients) do
+    it('returns an array of all patients of assigned to that doctor') do
+      doctor = Doctor.new({:name => name, :id => id, :specialty => specialty})
+      doctor.save()
+      test_patient1 = Patient.new({:name => "Worf",:doc_id => doctor.id, :birthdate => '2017-05-01'})
+      test_patient1.save()
+      test_patient1 = Patient.new({:name => "Dorf",:doc_id => doctor.id, :birthdate => '2017-08-01'})
+      test_patient1.save()
+      expect(doctor.patients(doctor.id())).to(eq([test_patient1, test_patient2]))
+    end
+
+
+  end
+
 end

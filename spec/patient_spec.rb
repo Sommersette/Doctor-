@@ -50,13 +50,18 @@ describe(Patient) do
   end
 
   describe("#doc_id") do
-    it(" lets you view a doctor's ID on each patient") do
+    it("lets you view a doctor's ID on each patient") do
       patient = Patient.new({:name => "Dorf",:doc_id => 9, :birthdate => '2017-05-01'})
       expect(patient.doc_id).to(eq(9))
     end
   end
 
-
+  # describe("#find") do
+  #   it("allow patients to search for all doctors in that specialty") do
+  #     patient = Patient.new({:name => "Dorf",:doc_id => 9, :birthdate => '2017-05-01'}) #needs to be rewritten for specialty. Not to search for patients.
+  #     expect(patient.find).to(eq(9))
+  #   end
+  # end
 
 
 end

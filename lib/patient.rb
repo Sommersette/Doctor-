@@ -21,14 +21,15 @@ class Patient
       patients
     end
 
-    define_method(:save) do
-      result = DB.exec("INSERT INTO patients (name, birthdate) VALUES ('#{@name}', '#{@birthdate}') RETURNING id;")
-      @id = result.first().fetch("id").to_i()
-    end
+  define_method(:save) do
+    result = DB.exec("INSERT INTO patients (name, birthdate) VALUES ('#{@name}', '#{@birthdate}') RETURNING id;")
+    @id = result.first().fetch("id").to_i()
+  end
 
-    define_method(:==) do |another_patient|
-      self.name().==(another_patient.name())
-    end
+  define_method(:==) do |another_patient|
+    self.name().==(another_patient.name())
+  end
+
 
 
 end
