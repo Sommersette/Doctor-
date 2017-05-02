@@ -4,7 +4,7 @@ class Doctor
 
   define_method(:initialize) do |attributes|
     @name = attributes.fetch(:name)
-    @id = attributes.fetch(:id)
+    @id = attributes[:id]
     @specialty = attributes.fetch(:specialty)
   end
 

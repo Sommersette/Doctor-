@@ -15,7 +15,7 @@ describe(Doctor) do
 
   describe("#save") do
     it("add a doctor to the array of saved doctors") do
-      doctor = Doctor.new({:name => "Bob", :id => nil, :specialty => "hands"})
+      doctor = Doctor.new({:name => "Bob", :specialty => "hands"})
       doctor.save()
       expect(Doctor.all()).to(eq([doctor]))
     end
@@ -23,14 +23,14 @@ describe(Doctor) do
 
   describe("#name") do
     it("lets you see the name") do
-      doctor = Doctor.new({:name => "learn SQL", :id => nil, :specialty => "hands"})
+      doctor = Doctor.new({:name => "learn SQL", :specialty => "hands"})
       expect(doctor.name()).to(eq("learn SQL"))
     end
   end
 
   describe("#id") do
     it("lets you read the doctor ID") do
-      doctor = Doctor.new({:name => "learn SQL", :id => nil, :specialty => "hands"})
+      doctor = Doctor.new({:name => "learn SQL", :specialty => "hands"})
       expect(doctor.id()).to(eq(nil))
     end
   end
